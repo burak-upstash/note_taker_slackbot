@@ -5,5 +5,5 @@
 // }
 
 module.exports = (req, res) => {
-    res.send(`Hello ali!`);
-  };
+    res.send("Hello ali!");
+};
