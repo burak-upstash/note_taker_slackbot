@@ -1,47 +1,70 @@
 
 
 module.exports = (req, res) => {
-    console.log(req.body)
-    console.log("Text:", req.body.text)
+  console.log(req.body)
+  console.log("Text:", req.body.text)
 
-    const commandArray = tokenizeString(req.body.text)
-    const action = commandArray[0]
+  const commandArray = tokenizeString(req.body.text)
+  const action = commandArray[0]
 
-    switch(action) {
-      case "redis":
-        redis(res, commandArray)
-        break
-      case "kafka":
-        kafka(res, commandArray)
-        // code block
-        break
-      case "team":
-        team(res, commandArray)
-        break
-      default:
-        res.send("Wrong usage of the command!")
-    }
+  switch (action) {
+    case "redis":
+      redis(res, commandArray)
+      break
+    case "kafka":
+      kafka(res, commandArray)
+      // code block
+      break
+    case "team":
+      team(res, commandArray)
+      break
+    default:
+      res.send("Wrong usage of the command!")
+  }
 
 
 
-    // const { name = 'World' } = req.query
-    // res.send(`Hello ${name}!`)
+  // const { name = 'World' } = req.query
+  // res.send(`Hello ${name}!`)
 };
 
 function redis(res, commandArray) {
-  res.send("REDIS!")
+  res.send({
+    "response_type": "ephemeral",
+    "text": "REDIS! Ephemeral"
+  })
 }
 
 function kafka(res, commandArray) {
-  res.send("KAFKA!")
+  res.send({
+    "response_type": "in_channel",
+    "text": "KAFKA!"
+  })
 }
 
 function team(res, commandArray) {
-  res.send("TEAM!")
+  res.send({
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*It's 80 degrees right now.*"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "Partly cloudy today and tomorrow"
+        }
+      }
+    ]
+  })
 }
 
 function tokenizeString(string) {
-  const array = string.replaceAll(' ','').split("-")
+  const array = string.replaceAll(' ', '').split("-")
   console.log("Tokenized version:", array)
   return array
 }
