@@ -1,13 +1,38 @@
+import { post } from "../_utils"
 
-export function app_mention(req, res) {
+
+export async function app_mention(req, res) {
     let event = req.body.event
-    
-    console.log("event is:", event)
 
-    console.log("res:", res)
+    try {
+        await post(res, {
+            "blocks": [
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "Someone called me!"
+                    }
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "Who is that?"
+                    }
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": `<@${event.user}> mentioned me!`
+                    }
+                }
+            ]
+        })
+    }
+    catch (e) {
+        console.log(e)
+    }
 
-    res.send({
-        "response_type": "in_channel",
-        "text": `App mentioned by `
-    })
 }

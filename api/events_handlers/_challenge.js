@@ -1,4 +1,3 @@
-
 export function challenge(req, res) {
     console.log("req body challenge is:", req.body.challenge)
 

@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+
 export function redis(res, commandArray) {
     res.send({
         "response_type": "ephemeral",
@@ -21,14 +22,14 @@ export function team(res, commandArray) {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "*It's 80 degrees right now.*"
+                    "text": "Teamwork is awesome!"
                 }
             },
             {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "Partly cloudy today and tomorrow"
+                    "text": "Team creation will be available shortly..."
                 }
             }
         ]
@@ -41,12 +42,10 @@ export function tokenizeString(string) {
     return array
 }
 
-
 export async function post(res, payload) {
-
     axios({
         method: 'post',
-        url: 'https://hooks.slack.com/services/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',
+        url: process.env.HOOK_URL,
         data: payload,
         timeout: 4000,
         headers: {
@@ -54,15 +53,10 @@ export async function post(res, payload) {
         }
     })
         .then(response => {
-            // console.log("response from axios:", response)
-
             console.log("data from axios:", response.data)
-
             res.json({ ok: true })
-            // res.send()
         })
         .catch(err => {
             console.log("axios Error:", err)
         })
-
 }
