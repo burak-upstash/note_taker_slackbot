@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.26.0",
+    "vercel": "^24.0.0"
+  }
+}
