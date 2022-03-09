@@ -43,9 +43,8 @@ export function tokenizeString(string) {
 }
 
 export async function post(res, payload) {
-    axios({
+    axios(process.env.HOOK_URL, {
         method: 'post',
-        url: process.env.HOOK_URL,
         data: payload,
         timeout: 4000,
         headers: {
