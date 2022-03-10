@@ -1,3 +1,7 @@
 .vercel
 node_modules
+<<<<<<< HEAD
 package-lock.json
+=======
+.env
+>>>>>>> 118824bca7d1156ab564194d8a79086ac038ecd4

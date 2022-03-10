@@ -43,6 +43,7 @@ export function tokenizeString(string) {
     return array
 }
 
+<<<<<<< HEAD
 export async function postToChannel(channel, res, payload) {
 
     console.log("channel:", channel)
@@ -61,6 +62,16 @@ export async function postToChannel(channel, res, payload) {
         url: 'https://slack.com/api/chat.postMessage',
         headers: { 'Content-Type': 'application/json; charset=utf-8', 'Authorization': `Bearer ${token}` },
         data: message,
+=======
+export async function post(res, payload) {
+    axios(process.env.HOOK_URL, {
+        method: 'post',
+        data: payload,
+        timeout: 4000,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+>>>>>>> 118824bca7d1156ab564194d8a79086ac038ecd4
     })
         .then(response => {
             console.log("data from axios:", response.data)
