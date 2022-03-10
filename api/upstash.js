@@ -1,10 +1,9 @@
-import {redis, kafka, team, tokenizeString} from './_utils'
+import { redis, kafka, team, tokenizeString } from './_utils'
 
 module.exports = (req, res) => {
   console.log("req body:", req.body)
   console.log("Text:", req.body.text)
-  console.log("res:", res)
-  
+
   const commandArray = tokenizeString(req.body.text)
   const action = commandArray[0]
 
@@ -22,6 +21,6 @@ module.exports = (req, res) => {
       res.send({
         "response_type": "ephemeral",
         "text": "Wrong usage of the command!"
-    })
+      })
   }
 }

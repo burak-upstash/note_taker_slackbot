@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+const token = process.env.SLACK_BOT_TOKEN
 
 export function redis(res, commandArray) {
     res.send({
@@ -42,15 +43,24 @@ export function tokenizeString(string) {
     return array
 }
 
-export async function post(res, payload) {
+export async function postToChannel(channel, res, payload) {
+
+    console.log("channel:", channel)
+    var channelId = await channelNameToId(channel)
+
+    console.log("ID:", channelId)
+
+    const message = {
+        channel: channelId,
+        text: payload,
+        // blocks: payload
+    }
+
     axios({
         method: 'post',
-        url: process.env.HOOK_URL,
-        data: payload,
-        timeout: 4000,
-        headers: {
-            'Content-Type': 'application/json',
-        }
+        url: 'https://slack.com/api/chat.postMessage',
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Authorization': `Bearer ${token}` },
+        data: message,
     })
         .then(response => {
             console.log("data from axios:", response.data)
@@ -59,4 +69,30 @@ export async function post(res, payload) {
         .catch(err => {
             console.log("axios Error:", err)
         })
+
+}
+
+async function channelNameToId(channelName) {
+    var id
+    await axios({
+        method: 'post',
+        url: 'https://slack.com/api/conversations.list',
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Authorization': `Bearer ${token}` },
+    })
+        .then(response => {
+            response.data.channels.forEach(element => {
+                console.log("NAME, ID", element.name, element.id )
+                if (element.name === channelName) {
+                    id = element.id
+                    console.log("FOUND!:", element.id)
+                    return element.id
+                }
+            });
+        })
+        .catch(err => {
+            console.log("axios Error:", err)
+        })
+
+        return id
+
 }
