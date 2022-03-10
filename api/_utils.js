@@ -53,7 +53,7 @@ export async function postToChannel(channel, res, payload) {
     const message = {
         channel: channelId,
         text: payload,
-        blocks: payload
+        // blocks: payload
     }
 
     axios({
