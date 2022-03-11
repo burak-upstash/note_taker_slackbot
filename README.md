@@ -6,7 +6,7 @@
 * ### [Deploying on Vercel](#deploying-on-vercel)
 
 
-
+![](https://github.com/upstash/roadmap/blob/main/public/ss.png)
 
 ### Configuring Slack Bot
 
@@ -14,18 +14,18 @@ How to create an app...
 ....
 .....
 .....
-
 .....
+
 
 .....
 
 
 Give the bot subscriptions as follows:
-![asdasd](https://github.com/burak-upstash/slackbot-management-api/blob/public/bot_subscriptions.png)
+![](./public/bot_subscriptions.png)
 
 
 Give the bot permissions as follows:
-![something](https://github.com/burak-upstash/slackbot-management-api/blob/public/bot_permissions.png)
+![](./public/bot_permissions.png)
 
 
 
