@@ -5,10 +5,9 @@ export async function app_mention(req, res) {
     let event = req.body.event
 
     try {
-        await postToChannel("random", res, "NABER")
+        await postToChannel("general", res, `Hi there! Thanks for mentioning me, <@${event.user}>!`)
     }
     catch (e) {
         console.log(e)
     }
-
 }

@@ -1,3 +1,70 @@
+# .... Slack Bot
+
+## Docs
+
+* ### [Configuring Slack App](#configuring-slack-bot)
+* ### [Deploying on Vercel](#deploying-on-vercel)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET&project-name=vercel-slackbot)
+
+
+## Configuring Slack Bot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
+..............
+
 # Slackbot Implementation with Vercel
 
 ## Important Notes
@@ -56,3 +123,6 @@ After you tested your project in preview mode, you can:
 When it is active again, it will work after some wait time.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET&project-name=vercel-slackbot)
+
+
+

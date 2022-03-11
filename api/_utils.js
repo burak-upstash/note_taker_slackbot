@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const token = process.env.SLACK_BOT_TOKEN
+const defaultChannel = process.env.DEFAULT_BOT_CHANNEL
 
 export function redis(res, commandArray) {
     res.send({
@@ -45,6 +46,8 @@ export function tokenizeString(string) {
 
 export async function postToChannel(channel, res, payload) {
 
+    if(defaultChannel) channel = defaultChannel
+
     console.log("channel:", channel)
     var channelId = await channelNameToId(channel)
 
@@ -73,6 +76,7 @@ export async function postToChannel(channel, res, payload) {
 }
 
 async function channelNameToId(channelName) {
+    var generalId
     var id
     await axios({
         method: 'post',
@@ -81,13 +85,15 @@ async function channelNameToId(channelName) {
     })
         .then(response => {
             response.data.channels.forEach(element => {
-                console.log("NAME, ID", element.name, element.id )
+
                 if (element.name === channelName) {
                     id = element.id
-                    console.log("FOUND!:", element.id)
                     return element.id
                 }
+                else if(element.name === "general") generalId = element.id
             });
+
+            return generalId
         })
         .catch(err => {
             console.log("axios Error:", err)
