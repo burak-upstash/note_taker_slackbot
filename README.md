@@ -6,8 +6,6 @@
 * ### [Deploying on Vercel](#deploying-on-vercel)
 
 
-![](https://github.com/upstash/roadmap/blob/main/public/ss.png)
-
 ### Configuring Slack Bot
 
 How to create an app...
