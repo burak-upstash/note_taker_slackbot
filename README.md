@@ -31,7 +31,11 @@ Give the bot permissions as follows:
 
 ### Deploying On Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET,DEFAULT_BOT_CHANNEL&project-name=vercel-slackbot)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET&project-name=vercel-slackbot)
+
+#### Optional
+To specify which channel the bot should post to:
+
 
 
 ## Configuring Slack Bot
