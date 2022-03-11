@@ -21,11 +21,11 @@ How to create an app...
 
 
 Give the bot subscriptions as follows:
-![](./public/bot_subscriptions.png)
+![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_subscriptions.png)
 
 
 Give the bot permissions as follows:
-![](./public/bot_permissions.png)
+![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_permissions.png)
 
 
 
