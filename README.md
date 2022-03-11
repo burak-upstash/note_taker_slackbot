@@ -2,9 +2,36 @@
 
 ## Docs
 
-* ### [Configuring Slack App](#configuring-slack-bot)
+* ### [Configuring Slack Bot](#configuring-slack-bot)
 * ### [Deploying on Vercel](#deploying-on-vercel)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET&project-name=vercel-slackbot)
+
+
+
+
+### Configuring Slack Bot
+
+How to create an app...
+....
+.....
+.....
+
+.....
+
+.....
+
+
+Give the bot subscriptions as follows:
+![asdasd](https://github.com/burak-upstash/slackbot-management-api/blob/public/bot_subscriptions.png)
+
+
+Give the bot permissions as follows:
+![something](https://github.com/burak-upstash/slackbot-management-api/blob/public/bot_permissions.png)
+
+
+
+### Deploying On Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET,DEFAULT_BOT_CHANNEL&project-name=vercel-slackbot)
 
 
 ## Configuring Slack Bot
