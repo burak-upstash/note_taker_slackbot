@@ -1,14 +1,6 @@
 const axios = require('axios');
+import { token, defaultChannel } from './_constants';
 
-const token = process.env.SLACK_BOT_TOKEN
-const defaultChannel = process.env.DEFAULT_BOT_CHANNEL
-
-export function redis(res, commandArray) {
-    res.send({
-        "response_type": "ephemeral",
-        "text": "REDIS! Ephemeral"
-    })
-}
 
 export function kafka(res, commandArray) {
     res.send({
@@ -39,7 +31,9 @@ export function team(res, commandArray) {
 }
 
 export function tokenizeString(string) {
-    const array = string.split("-")
+    const array = string.split(" ").filter(element => {
+        return element !== ""
+    })
     console.log("Tokenized version:", array)
     return array
 }
@@ -71,6 +65,10 @@ export async function postToChannel(channel, res, payload) {
         })
         .catch(err => {
             console.log("axios Error:", err)
+            res.send({
+                "response_type": "ephemeral",
+                "text": `${err.response.data.error}`
+            })
         })
 
 }

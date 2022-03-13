@@ -2,9 +2,8 @@ import { challenge } from './events_handlers/_challenge'
 import { app_mention } from './events_handlers/_app_mention'
 import { channel_created } from './events_handlers/_channel_created'
 import { validateSlackRequest } from './_validate'
+import { signingSecret } from './_constants'
 
-
-const signingSecret = process.env.SLACK_SIGNING_SECRET;
 
 module.exports = async (req, res) => {
     var type = req.body.type
