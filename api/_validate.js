@@ -5,19 +5,13 @@ const crypto = require("crypto");
 
 exports.validateSlackRequest = (event, signingSecret) => {
 
-    // console.log("event:", event)
-    // console.log("signingSecret:", signingSecret)
-
     const requestBody = JSON.stringify(event["body"])
 
-    // const headers = makeLower(event.headers);
     const headers = event.headers
-
 
     const timestamp = headers["x-slack-request-timestamp"]
     const slackSignature = headers["x-slack-signature"]
     const baseString = 'v0:' + timestamp + ':' + requestBody
-
 
     const hmac = crypto.createHmac("sha256", signingSecret)
         .update(baseString)
@@ -25,19 +19,5 @@ exports.validateSlackRequest = (event, signingSecret) => {
     const computedSlackSignature = "v0=" + hmac
     const isValid = computedSlackSignature === slackSignature
 
-
-
     return isValid;
 };
-
-// const makeLower = (headers) => {
-//     let lowerCaseHeaders = {}
-
-//     for (const key in headers) {
-//         if (headers.hasOwnProperty(key)) {
-//             lowerCaseHeaders[key.toLowerCase()] = headers[key].toLowerCase()
-//         }
-//     }
-
-//     return lowerCaseHeaders
-// }
