@@ -1,5 +1,5 @@
 const axios = require('axios');
-import { token, defaultChannel } from './_constants';
+import { token } from './_constants';
 
 
 export function kafka(res, commandArray) {
@@ -39,8 +39,6 @@ export function tokenizeString(string) {
 }
 
 export async function postToChannel(channel, res, payload) {
-
-    if(defaultChannel) channel = defaultChannel
 
     console.log("channel:", channel)
     var channelId = await channelNameToId(channel)
