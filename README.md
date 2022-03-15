@@ -1,23 +1,112 @@
-# .... Slack Bot
+# Note Taker Slack App/Bot
+
+* ### [What it does?](#what-it-does)
+    * Events:
+        * New channel created:
+            * When a new channel created, posts a message to `general` channel stating that such an event happened.
+        * Slackbot mentioned:
+            * Whenever the bot is mentioned, posts a
+            message to `general` channel stating
+            that the bot was mentioned.
+
+* Commands:
+    * `/note set <key> <value>` :
+        * Sets a key value pair.
+    * `/note get <key>` :
+        * Gets the value corresponding to the key
+    * `/note list-set <list_name> <item_as_string>` :
+        * Adds the `<item_as_string>` to `<list_name>` list as an item.
+    * `/note list-all <list_name>` :
+        * Lists all the items in the `<list_name>`
+    * `/note list-remove <list_name> <item_as_string>` :
+        * Removes `<item_as_string>` from the `<list_name>`
+
+* P.S: 
+    * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
 ## Docs
+1.  ### [Configuring Upstash](#configuring-slack-bot)
+2. ### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
+3. ### [Deploying on Vercel](#deploying-on-vercel)
+4. ### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
+***
+### [Configuring Upstash](#configuring-slack-bot)
+1. Go to the [Upstash Console](https://console.upstash.com/) and create a new database
 
-* ### [Configuring Slack Bot](#configuring-slack-bot)
-* ### [Deploying on Vercel](#deploying-on-vercel)
+#### Upstash environment
+Find the variables in the database details page in Upstash Console:
+`UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` 
+
+(These will be the env variables for vercel deployment) 
+
+### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
+1. Go to [Slack API Apps Page](https://api.slack.com/apps):
+    * Create new App
+        * From Scratch
+        * Name your app & pick a workspace 
+    * Go to Oauth & Permissions
+        * Add the following scopes
+            * app_mentions:read
+            * channels:read
+            * chat:write
+            * chat:write.public
+            * commands
+        * Install App to workspace
+            * Basic Information --> Install Your App --> Install To Workspace
+2. Note the variables (These will be the env variables for vercel deployment) : 
+    * `SLACK_SIGNING_SECRET`:
+        * Go to Basic Information
+            * App Credentials --> Signing Secret
+    * `SLACK_BOT_TOKEN`:
+        * Go to OAuth & Permissions
+            * Bot User OAuth Token
+    
 
 
-### Configuring Slack Bot
-
-How to create an app...
-....
-.....
-.....
-.....
 
 
-.....
 
 
+
+### [Deploying on Vercel](#deploying-on-vercel)
+
+1. Click the deploy button: 
+
+<div style="text-align:center">
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+</div>
+
+2. Fill the environmental variables defined above.
+
+
+
+***
+### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
+
+After deployment, you can use the provided `vercel_domain`.
+
+1. Go to [Slack API Apps Page](https://api.slack.com/apps) and choose relevant app:
+    * Go to Slash Commands:
+        * Create New Command:
+            * Command : `note`
+            * Request URL : `<vercel_domain>/api/note`
+            * Configure the rest however you like.
+    * Go to Event Subscribtions:
+        * Enable Events:
+            * Request URL: `<vercel_domain>/api/events`
+        * Subscribe to bot events by adding:
+            * app_mention
+            * channel_created
+
+2. After these changes, Slack might require to reinstall the app.
+
+
+
+
+
+
+
+<!-- 
 Give the bot subscriptions as follows:
 
 ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_subscriptions.png)
@@ -25,135 +114,6 @@ Give the bot subscriptions as follows:
 
 Give the bot permissions as follows:
 
-![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_permissions.png)
-
-
-
-### Deploying On Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&project-name=vercel-slackbot)
-
-#### Optional
-To specify which channel the bot should post to:
-
-
-
-## Configuring Slack Bot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-..............
-
-# Slackbot Implementation with Vercel
-
-## Important Notes
-### Before starting the implementation, please make sure that you are using the same node version as in Vercel instance.
-#### (For this case, we will be using node v14)
-
-### Required Items
-* Vercel Account
-> We will use Vercel to host our serverless functions.
-
-* Access to slack workspace
-> We need a Slack workspace to install our bot.
-
-### Optional Items
-#### Vercel CLI
-We want to abstract as much server management details as possible, which is the sole reason for using serverless.
-
-So, when in development mode, this CLI helps us create a serverless environment in the comfort of our own localhost.
-
-
-#### Ngrok
-Vercel is pretty fast when it comes to deploying your source code.
-However, still local development is faster for various reasons. To make our development and debugging faster, we will create our bot in local environment.
-
-So, we can host a serverless API -thanks to Vercel Cli- but our endpoint is tied to our localhost. If your IP is not static, meaning it changes constantly by your ISP, you cannot give your localhost as request endpoint for Slack bot. 
-
-In that case, you need to tunnel your localhost to some static public domain.
-
-This is why we use Ngrok. It enables us to map a static public IP to our localhost.
-
-
-
-
-
-.....
-
-
-
-
-#### When all is done, all you need to do is:
-- `vercel deploy`
-
->   This will deploy your project as a preview. You can test functionalities of your bot by giving this address, last step before production.
-
-> It is so crucial that your node version matches since some functionalities are not provided and/or others are deprecated. If you got your bot to run on local environment using `vercel dev`; it should be working on Vercel platform, error free.
-
-After you tested your project in preview mode, you can:
-- `vercel --prod`
-> Deploy your project in production environment.
-
-
-
-
-
-#### What happens when bot is inactive?
-When it is active again, it will work after some wait time.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fslackbot-management-api&env=SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET&project-name=vercel-slackbot)
-
+![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_permissions.png) -->
 
 

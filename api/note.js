@@ -1,4 +1,4 @@
-import { kafka, team, tokenizeString } from './_utils'
+import { tokenizeString } from './_utils'
 import { setKey } from './slash_handlers/_set_key'
 import { addToList } from './slash_handlers/_add_to_list'
 import { listAll } from './slash_handlers/_list_all'
@@ -16,13 +16,6 @@ module.exports = (req, res) => {
     case "list-set": addToList(res, commandArray); break
     case "list-all": listAll(res, commandArray); break
     case "list-remove": removeFromList(res, commandArray); break 
-
-    case "kafka":
-      kafka(res, commandArray)
-      break
-    case "team":
-      team(res, commandArray)
-      break
     default:
       res.send({
         "response_type": "ephemeral",

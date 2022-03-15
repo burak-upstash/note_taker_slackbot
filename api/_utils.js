@@ -1,35 +1,6 @@
 const axios = require('axios');
 import { token } from './_constants';
 
-
-export function kafka(res, commandArray) {
-    res.send({
-        "response_type": "in_channel",
-        "text": "KAFKA!"
-    })
-}
-
-export function team(res, commandArray) {
-    res.send({
-        "blocks": [
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "Teamwork is awesome!"
-                }
-            },
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "Team creation will be available shortly..."
-                }
-            }
-        ]
-    })
-}
-
 export function tokenizeString(string) {
     const array = string.split(" ").filter(element => {
         return element !== ""
@@ -48,7 +19,6 @@ export async function postToChannel(channel, res, payload) {
     const message = {
         channel: channelId,
         text: payload,
-        // blocks: payload
     }
 
     axios({
@@ -96,5 +66,4 @@ async function channelNameToId(channelName) {
         })
 
         return id
-
 }
