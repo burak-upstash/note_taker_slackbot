@@ -25,10 +25,10 @@
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
 ## Docs
-- ### [Configuring Upstash](#configuring-upstash)
-- ### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
-- ### [Deploying on Vercel](#deploying-on-vercel)
-- ### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
+- ### Configuring Upstash
+- ### Configuring Slack Bot - 1
+- ### Deploying on Vercel
+- ### Configuring Slack Bot - 2
 ***
 ### Configuring Upstash
 1. Go to the [Upstash Console](https://console.upstash.com/) and create a new database
