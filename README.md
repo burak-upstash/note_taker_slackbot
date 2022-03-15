@@ -1,13 +1,13 @@
 # Note Taker Slack App/Bot
 
-* ### [What it does?](#what-it-does)
-    * Events:
-        * New channel created:
-            * When a new channel created, posts a message to `general` channel stating that such an event happened.
-        * Slackbot mentioned:
-            * Whenever the bot is mentioned, posts a
-            message to `general` channel stating
-            that the bot was mentioned.
+### What it does?
+* Events:
+    * New channel created:
+        * When a new channel created, posts a message to `general` channel stating that such an event happened.
+    * Slackbot mentioned:
+        * Whenever the bot is mentioned, posts a
+        message to `general` channel stating
+        that the bot was mentioned.
 
 * Commands:
     * `/note set <key> <value>` :
@@ -25,21 +25,21 @@
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
 ## Docs
-1.  ### [Configuring Upstash](#configuring-slack-bot)
-2. ### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
-3. ### [Deploying on Vercel](#deploying-on-vercel)
-4. ### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
+- ### [Configuring Upstash](#configuring-upstash)
+- ### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
+- ### [Deploying on Vercel](#deploying-on-vercel)
+- ### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
 ***
-### [Configuring Upstash](#configuring-slack-bot)
+### Configuring Upstash
 1. Go to the [Upstash Console](https://console.upstash.com/) and create a new database
 
-#### Upstash environment
-Find the variables in the database details page in Upstash Console:
-`UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` 
+    #### Upstash environment
+    Find the variables in the database details page in Upstash Console:
+    `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` 
 
-(These will be the env variables for vercel deployment) 
+    (These will be the env variables for vercel deployment) 
 
-### [Configuring Slack Bot - 1](#configuring-slack-bot-1)
+### Configuring Slack Bot - 1
 1. Go to [Slack API Apps Page](https://api.slack.com/apps):
     * Create new App
         * From Scratch
@@ -64,11 +64,7 @@ Find the variables in the database details page in Upstash Console:
 
 
 
-
-
-
-
-### [Deploying on Vercel](#deploying-on-vercel)
+### Deploying on Vercel
 
 1. Click the deploy button: 
 
@@ -78,12 +74,9 @@ Find the variables in the database details page in Upstash Console:
 
 2. Fill the environmental variables defined above.
 
+### Configuring Slack Bot - 2
 
-
-***
-### [Configuring Slack Bot - 2](#configuring-slack-bot-2)
-
-After deployment, you can use the provided `vercel_domain`.
+* After deployment, you can use the provided `vercel_domain`.
 
 1. Go to [Slack API Apps Page](https://api.slack.com/apps) and choose relevant app:
     * Go to Slash Commands:
@@ -98,7 +91,7 @@ After deployment, you can use the provided `vercel_domain`.
             * app_mention
             * channel_created
 
-2. After these changes, Slack might require to reinstall the app.
+2. After these changes, Slack may require reinstalling of the app.
 
 
 
