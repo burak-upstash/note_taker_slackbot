@@ -1,19 +1,15 @@
 # Note Taker Slack App/Bot
 This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis for database.
 
-<!-- ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png) -->
+## Docs
+- ### [What the Bot Does](#what-this-bot-does)
+- ### [Configuring Upstash](#configure-upstash)
+- ### [Configuring Slack Bot - 1](#configure-slack-bot-1)
+- ### [Deploying on Vercel](#deploy-on-vercel)
+- ### [Configuring Slack Bot - 2](#configure-slack-bot-2)
 
-
-
-<!-- ![](./public/slash_commands.png) -->
-
-
-<!-- ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png) -->
-
-
-<!-- ![](./public/events.png) -->
-
-### What this Slackbot does?
+### What The Bot Does
+<a id="what-this-bot-does"></a>
 * Events:
     * New channel created:
         * When a new is channel created, posts a message to `general` channel stating that such an event happened.
@@ -54,11 +50,7 @@ Simply fill the environmental variables defined below and your serverless functi
 </p>
 
 
-## Docs
-- ### [Configuring Upstash](#configure-upstash)
-- ### [Configuring Slack Bot - 1](#configure-slack-bot-1)
-- ### [Deploying on Vercel](#deploy-on-vercel)
-- ### [Configuring Slack Bot - 2](#configure-slack-bot-2)
+
 ***
 ### Configuring Upstash 
 <a id="configure-upstash"></a>
