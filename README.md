@@ -16,7 +16,7 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 ### What this Slackbot does?
 * Events:
     * New channel created:
-        * When a new channel created, posts a message to `general` channel stating that such an event happened.
+        * When a new is channel created, posts a message to `general` channel stating that such an event happened.
     * Slackbot mentioned:
         * Whenever the bot is mentioned, posts a
         message to `general` channel stating
@@ -45,7 +45,6 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 * P.S: 
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
-<br>
 <br>
 
 # Deploy This Project on Vercel!
