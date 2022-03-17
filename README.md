@@ -23,8 +23,9 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
         that the bot was mentioned.
 
 <p align="center">
-<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png">
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png">
 </p>
+
 
 * Commands:
     * `/note set <key> <value>` :
@@ -38,7 +39,7 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
     * `/note list-remove <list_name> <item_as_string>` :
         * Removes `<item_as_string>` from the `<list_name>`
 <p align="center">
-<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png">
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png">
 </p>
 
 * P.S: 
