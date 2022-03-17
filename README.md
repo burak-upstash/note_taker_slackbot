@@ -3,12 +3,6 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 
 <!-- ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png) -->
 
-<p align="center"> 
-<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png">
-<br>
-<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png">
-
-</p>
 
 
 <!-- ![](./public/slash_commands.png) -->
@@ -28,6 +22,10 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
         message to `general` channel stating
         that the bot was mentioned.
 
+<p align="center">
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png">
+</p>
+
 * Commands:
     * `/note set <key> <value>` :
         * Sets a key value pair.
@@ -39,6 +37,9 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
         * Lists all the items in the `<list_name>`
     * `/note list-remove <list_name> <item_as_string>` :
         * Removes `<item_as_string>` from the `<list_name>`
+<p align="center">
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png">
+</p>
 
 * P.S: 
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
