@@ -1,6 +1,24 @@
 # Note Taker Slack App/Bot
 This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis for database.
 
+<!-- ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png) -->
+
+<p align="center"> 
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/slash_commands.png">
+<br>
+<img src="https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png">
+
+</p>
+
+
+<!-- ![](./public/slash_commands.png) -->
+
+
+<!-- ![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/events.png) -->
+
+
+<!-- ![](./public/events.png) -->
+
 ### What this Slackbot does?
 * Events:
     * New channel created:
