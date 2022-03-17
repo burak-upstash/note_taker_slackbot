@@ -33,14 +33,19 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
 </div>
 
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+</p>
+
 
 ## Docs
-- ### [Configuring Upstash](#configuring-upstash)
-- ### [Configuring Slack Bot - 1](#configuring-slack-bot---1)
-- ### [Deploying on Vercel](#deploying-on-vercel)
-- ### [Configuring Slack Bot - 2](#configuring-slack-bot---2)
+- ### [Configuring Upstash](#configure-upstash)
+- ### [Configuring Slack Bot - 1](#configure-slack-bot-1)
+- ### [Deploying on Vercel](#deploy-on-vercel)
+- ### [Configuring Slack Bot - 2](#configure-slack-bot-2)
 ***
-### Configuring Upstash
+### Configuring Upstash 
+<a id="configure-upstash"></a>
 1. Go to the [Upstash Console](https://console.upstash.com/) and create a new database
 
     #### Upstash environment
@@ -49,7 +54,8 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 
     (These will be the env variables for vercel deployment) 
 
-### Configuring Slack Bot - 1
+### Configuring Slack Bot - 1 
+<a id="configure-slack-bot-1"></a>
 1. Go to [Slack API Apps Page](https://api.slack.com/apps):
     * Create new App
         * From Scratch
@@ -74,7 +80,7 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 
 
 
-### Deploying on Vercel
+### Deploying on Vercel <a id="deploy-on-vercel"></a>
 
 1. Click the deploy button: 
 
@@ -85,6 +91,7 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 2. Fill the environmental variables defined above.
 
 ### Configuring Slack Bot - 2
+<a id="configure-slack-bot-2"></a>
 
 * After deployment, you can use the provided `vercel_domain`.
 
