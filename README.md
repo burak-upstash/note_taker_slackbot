@@ -45,7 +45,6 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 * P.S: 
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
-<br>
 
 # Deploy This Project on Vercel!
 Simply fill the environmental variables defined below and your serverless functions will be up in seconds!
