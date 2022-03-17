@@ -29,9 +29,7 @@ This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis fo
 <br>
 
 # Deploy This Project on Vercel!
-<div style="text-align:center">
-<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
-</div>
+
 
 <p align="center">
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
