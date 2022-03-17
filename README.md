@@ -1,7 +1,7 @@
 # Note Taker Slack App/Bot
 This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis for database.
 
-# Deploy This Project on Vercel!
+## Deploy This Project on Vercel!
 Simply fill the environmental variables defined below and your serverless functions will be up in seconds!
 
 <p align="center">
@@ -60,6 +60,7 @@ Simply fill the environmental variables defined below and your serverless functi
 
     (These will be the env variables for vercel deployment) 
 
+***
 ### Configuring Slack Bot - 1 
 <a id="configure-slack-bot-1"></a>
 1. Go to [Slack API Apps Page](https://api.slack.com/apps):
@@ -85,7 +86,7 @@ Simply fill the environmental variables defined below and your serverless functi
     
 
 
-
+***
 ### Deploying on Vercel <a id="deploy-on-vercel"></a>
 
 1. Click the deploy button: 
@@ -96,6 +97,7 @@ Simply fill the environmental variables defined below and your serverless functi
 
 2. Fill the environmental variables defined above.
 
+***
 ### Configuring Slack Bot - 2
 <a id="configure-slack-bot-2"></a>
 
@@ -115,21 +117,4 @@ Simply fill the environmental variables defined below and your serverless functi
             * channel_created
 
 2. After these changes, Slack may require reinstalling of the app.
-
-
-
-
-
-
-
-<!-- 
-Give the bot subscriptions as follows:
-
-![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_subscriptions.png)
-
-
-Give the bot permissions as follows:
-
-![](https://github.com/burak-upstash/slackbot-management-api/blob/main/public/bot_permissions.png) -->
-
 
