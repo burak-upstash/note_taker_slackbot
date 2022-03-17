@@ -1,6 +1,7 @@
 # Note Taker Slack App/Bot
+This is a Slack Bot, using Vercel for serverless deployment and Upstash Redis for database.
 
-### What it does?
+### What this Slackbot does?
 * Events:
     * New channel created:
         * When a new channel created, posts a message to `general` channel stating that such an event happened.
@@ -24,11 +25,20 @@
 * P.S: 
     * All of the commands mentioned can be implemented as slackbot mentions rather than slash commands. For demonstration purposes, slash commands are also used. Use cases may differ. 
 
+<br>
+<br>
+
+# Deploy This Project on Vercel!
+<div style="text-align:center">
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fburak-upstash%2Fnote_taker_slackbot&env=UPSTASH_REDIS_REST_URL,UPSTASH_REDIS_REST_TOKEN,SLACK_SIGNING_SECRET,SLACK_BOT_TOKEN&project-name=note-taker-slackbot&repo-name=note_taker_slackbot"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+</div>
+
+
 ## Docs
-- ### Configuring Upstash
-- ### Configuring Slack Bot - 1
-- ### Deploying on Vercel
-- ### Configuring Slack Bot - 2
+- ### [Configuring Upstash](#configuring-upstash)
+- ### [Configuring Slack Bot - 1](#configuring-slack-bot---1)
+- ### [Deploying on Vercel](#deploying-on-vercel)
+- ### [Configuring Slack Bot - 2](#configuring-slack-bot---2)
 ***
 ### Configuring Upstash
 1. Go to the [Upstash Console](https://console.upstash.com/) and create a new database
